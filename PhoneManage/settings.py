@@ -100,13 +100,38 @@ WSGI_APPLICATION = 'PhoneManage.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     # 'default': {
+#     #     'ENGINE': 'django.db.backends.sqlite3',
+#     #     'NAME': BASE_DIR / 'db.sqlite3',
+#     # }
+# }
 
+# DATABASES = {
+#     'default':{
+#         'ENGINE': 'sql_server.pyodbc',
+#         'NAME': 'PhoneManage',
+#         'HOST': 'localhost',
+#         'OPTIONS':{
+#             'driver': 'ODBC Driver 17 for SQL Server',
+#             'extra_params': 'TrustServerCerftificate = yes',
+#             'trusted_connection': 'yes',
+#         }
+#     }
+# }
+
+DATABASES = {
+    "default": {
+        "ENGINE": "sql_server.pyodbc",
+        "NAME": "PhoneManage",
+        "USER": "dora",
+        "PASSWORD": "0000",
+        "HOST": "127.0.0.1",
+        "PORT": "1433",
+        "OPTIONS": {"driver": "ODBC Driver 17 for SQL Server", 
+        },
+    },
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
